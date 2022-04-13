@@ -1,6 +1,7 @@
 #!/bin/bash
 
-git reset --hard HEAD
-git clean -f -d
-git pull --ff-only
+git checkout -b newbranch
+git fetch --force origin main:main
+git branch -D newbranch
+git checkout main
 docker-compose up --force-recreate
