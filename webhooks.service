@@ -4,7 +4,7 @@ Documentation=https://github.com/adnanh/webhook/
 ConditionPathExists=/var/opt/ups-sys/webhook.yml
 
 [Service]
-ExecStart=/usr/bin/webhook -nopanic -template -hooks /var/opt/ups-sys/webhook.yml
+ExecStart=/usr/bin/webhook -nopanic -hotreload -template -hooks /var/opt/ups-sys/webhook.yml 
 EnvironmentFile=/var/opt/ups-sys/.env
 
 [Install]
