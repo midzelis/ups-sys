@@ -2,6 +2,6 @@
 
 git checkout -b newbranch
 git fetch --force origin main:main
-git branch -D newbranch
 git checkout main
+git branch -D newbranch
 docker-compose up --force-recreate
