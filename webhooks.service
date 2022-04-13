@@ -1,10 +1,11 @@
 [Unit]
 Description=Webhooks
 Documentation=https://github.com/adnanh/webhook/
-ConditionPathExists=/var/opt/ups-sys/webhook.json
+ConditionPathExists=/var/opt/ups-sys/webhook.yml
 
 [Service]
-ExecStart=/usr/bin/webhook -nopanic -template -hooks /var/opt/ups-sys/webhook.json 
+ExecStart=/usr/bin/webhook -nopanic -template -hooks /var/opt/ups-sys/webhook.yml
+EnvironmentFile=/var/opt/ups-sys/.env
 
 [Install]
 WantedBy=multi-user.target
