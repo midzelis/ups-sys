@@ -6,16 +6,16 @@ services:
     restart: always
     environment:
       SERIAL: ${UPS_1_SERIAL}
-      SECRET: nut1_pwd
+      SECRET: nut_pwd
     volumes:
       - ./ups1/ups.conf:/etc/nut/local/ups.conf:rw
     ports:
     - ${PORT_UPSD_1:-3493}:3493
     secrets:
-    - nut1_pwd
+    - nut_pwd
     privileged: true
 
 secrets:
-  nut1_pwd:
-    file: ~/nut1_pwd
+  nut_pwd:
+    file: ./nut_pwd
 
